@@ -1,5 +1,5 @@
 Name:           aryan-bbswitch
-Version:        0.2
+Version:        0.3
 Release:        1%{?dist}
 Summary:        BBSwitched packaged for idk_what_to_doooo
 
@@ -26,6 +26,9 @@ install -m 755 bbswitch.ko %{buildroot}/opt/modules/
 /opt/modules/bbswitch.ko
 
 %changelog
+* Tue May 24 2022 Johnathon Clark <john.clark@cantab.net> 0.3-1
+- new package built with tito
+
 * Tue May 24 2022 Johnathon Clark <john.clark@cantab.net> 0.2-1
 - new package built with tito
 
