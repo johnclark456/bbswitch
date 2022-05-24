@@ -1,5 +1,5 @@
 Name:           aryan-bbswitch
-Version:        0.5
+Version:        0.6
 Release:        1%{?dist}
 Summary:        BBSwitched packaged for idk_what_to_doooo
 
@@ -29,6 +29,9 @@ install -m 644 bbswitch.service %{buildroot}/etc/systemd/system/
 /etc/systemd/system/bbswitch.service
 
 %changelog
+* Tue May 24 2022 Johnathon Clark <john.clark@cantab.net> 0.6-1
+- Add bbservice.service (john.clark@cantab.net)
+
 * Tue May 24 2022 Johnathon Clark <john.clark@cantab.net> 0.5-1
 - Created service file
 
