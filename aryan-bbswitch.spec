@@ -23,6 +23,7 @@ mkdir -p %{buildroot}/opt/modules/
 install -m 755 bbswitch.ko %{buildroot}/opt/modules/
 mkdir -p %{buildroot}/etc/systemd/system/
 install -m 644 bbswitch.service %{buildroot}/etc/systemd/system/
+chcon -t modules_object_t %{buildroot}/etc/systemd/system/bbswitch.ko
 
 %files
 /opt/modules/bbswitch.ko
