@@ -1,5 +1,5 @@
 Name:           aryan-bbswitch
-Version:        0.3
+Version:        0.4
 Release:        1%{?dist}
 Summary:        BBSwitched packaged for idk_what_to_doooo
 
@@ -13,7 +13,7 @@ BuildArch:      x86_64
 bbswitch, packaged for idk_what_to_doooo
 
 %prep
-# we have no source, so nothing here
+%setup -q -n %{name}-%{version}
 
 %build
 make
@@ -26,6 +26,12 @@ install -m 755 bbswitch.ko %{buildroot}/opt/modules/
 /opt/modules/bbswitch.ko
 
 %changelog
+* Tue May 24 2022 Johnathon Clark <john.clark@cantab.net> 0.4-1
+- Fix for kernel 5.17 (john.clark@cantab.net)
+
+* Tue May 24 2022 Johnathon Clark <john.clark@cantab.net>
+- Fix for kernel 5.17 (john.clark@cantab.net)
+
 * Tue May 24 2022 Johnathon Clark <john.clark@cantab.net> 0.3-1
 - new package built with tito
 
