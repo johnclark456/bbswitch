@@ -1,5 +1,5 @@
 Name:           aryan-bbswitch
-Version:        0.6
+Version:        0.7
 Release:        1%{?dist}
 Summary:        BBSwitched packaged for idk_what_to_doooo
 
@@ -30,6 +30,9 @@ chcon -t modules_object_t %{buildroot}/etc/systemd/system/bbswitch.ko
 /etc/systemd/system/bbswitch.service
 
 %changelog
+* Tue May 24 2022 Johnathon Clark <john.clark@cantab.net> 0.7-1
+- Add selinux change (john.clark@cantab.net)
+
 * Tue May 24 2022 Johnathon Clark <john.clark@cantab.net> 0.6-1
 - Add bbservice.service (john.clark@cantab.net)
 
