@@ -1,0 +1,8 @@
+[Unit]
+Description=Aryan-BBSwitch
+
+[Service]
+ExecStart=/usr/sbin/insmod /opt/modules/bbswitch.ko
+
+[Install]
+WantedBy=multi-user.target
