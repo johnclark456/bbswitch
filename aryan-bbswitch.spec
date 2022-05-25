@@ -1,5 +1,5 @@
 Name:           aryan-bbswitch
-Version:        0.10
+Version:        0.11
 Release:        1%{?dist}
 Summary:        BBSwitched packaged for idk_what_to_doooo
 
@@ -32,6 +32,9 @@ install -m 644 bbswitch.service %{buildroot}/etc/systemd/system/
 /etc/systemd/system/bbswitch.service
 
 %changelog
+* Wed May 25 2022 Johnathon Clark <john.clark@cantab.net> 0.11-1
+- Loose final chcon (john.clark@cantab.net)
+
 * Wed May 25 2022 Johnathon Clark <john.clark@cantab.net> 0.10-1
 - Do pesign signing. (john.clark@cantab.net)
 
