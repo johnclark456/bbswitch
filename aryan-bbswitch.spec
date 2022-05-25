@@ -25,7 +25,7 @@ mkdir -p %{buildroot}/etc/systemd/system/
 install -m 644 bbswitch.service %{buildroot}/etc/systemd/system/
 
 %post
-/usr/src/kernels/$(uname -r)/scripts/sign-file sha256 %{cert_path}/key.pem %{cert_path}/cert.pem /opt/modules/bbswitch.ko
+/usr/src/kernels/$(uname -r)/scripts/sign-file sha256 %(echo $HOME)/kernel/key.pem %(echo $HOME)/kernel/cert.pem /opt/modules/bbswitch.ko
 chcon -t modules_object_t /opt/modules/bbswitch.ko
 
 %files
