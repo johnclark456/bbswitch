@@ -8,6 +8,7 @@ URL:            https://github.com/johnclark456/bbswitch.git
 Source0:        %{name}-%{version}.tar.gz
 BuildArch:      x86_64
 
+BuildRequires: pesign >= 0.10-4
 
 %description
 bbswitch, packaged for idk_what_to_doooo
@@ -17,6 +18,8 @@ bbswitch, packaged for idk_what_to_doooo
 
 %build
 make
+mv bbswitch.ko bbswitch_unsigned.ko
+/usr/bin/pesign -c "MOK_aryan" -i bbswitch_unsigned.ko -o bbswitch.ko -s
 
 %install
 mkdir -p %{buildroot}/opt/modules/
@@ -25,7 +28,6 @@ mkdir -p %{buildroot}/etc/systemd/system/
 install -m 644 bbswitch.service %{buildroot}/etc/systemd/system/
 
 %post
-/usr/src/kernels/$(uname -r)/scripts/sign-file sha256 %(echo $HOME)/kernel/key.pem %(echo $HOME)/kernel/cert.pem /opt/modules/bbswitch.ko
 chcon -t modules_object_t /opt/modules/bbswitch.ko
 
 %files
