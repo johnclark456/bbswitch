@@ -1,5 +1,5 @@
 Name:           aryan-bbswitch
-Version:        0.9
+Version:        0.10
 Release:        1%{?dist}
 Summary:        BBSwitched packaged for idk_what_to_doooo
 
@@ -35,6 +35,9 @@ chcon -t modules_object_t /opt/modules/bbswitch.ko
 /etc/systemd/system/bbswitch.service
 
 %changelog
+* Wed May 25 2022 Johnathon Clark <john.clark@cantab.net> 0.10-1
+- Do pesign signing. (john.clark@cantab.net)
+
 * Wed May 25 2022 Johnathon Clark <john.clark@cantab.net> 0.9-1
 - Add kernel module signing - take 2 (john.clark@cantab.net)
 
